@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CHAIN, TonConnectButton } from '@tonconnect/ui-react';
+import './App.css';
+import { useTonConnect } from './hooks/useTonConnect';
+import styled from 'styled-components';
+
+const DivContainer = styled.div`
+    border: 1px solid green;
+    border-radius: 40px;
+    margin: 30px;
+    padding: 30px;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
+    const { network } = useTonConnect();
+    console.log(network);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <>
+            <TonConnectButton />
+            <DivContainer>
+                {network ? (network == CHAIN.MAINNET ? 'mainnet' : 'testnet') : 'N/A'}
+            </DivContainer>
+        </>
+    );
 }
 
-export default App
+export default App;
