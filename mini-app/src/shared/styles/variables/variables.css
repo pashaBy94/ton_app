@@ -1,0 +1,12 @@
+:root {
+    --shadow-widget: rgb(255, 142, 244);
+    --shadow-block: rgba(105, 35, 255, 0.273);
+    --background-second: rgb(233, 129, 223);
+    --background-button: rgb(94, 147, 221);
+    --color-title: rgb(77, 133, 212);
+    --color-text: rgb(54, 57, 61);
+    --background-button-disabled: rgb(118, 137, 163);
+    --background-button-hover: rgb(101, 157, 235);
+    --radius-first: 40px;
+    --radius-second: 30px;
+}

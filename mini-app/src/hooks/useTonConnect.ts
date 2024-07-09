@@ -9,8 +9,8 @@ export function useTonConnect(): {
 } {
     const wallet = useTonWallet();
     const [tonConnectUI] = useTonConnectUI();
-    console.log('WALLET', wallet);
-    console.log('TONCONNECTUI', tonConnectUI);
+    // console.log('WALLET', wallet);
+    // console.log('TONCONNECTUI', tonConnectUI);
 
     return {
         wallet: wallet?.account.address || null,
