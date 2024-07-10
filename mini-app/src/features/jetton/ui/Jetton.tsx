@@ -19,7 +19,8 @@ const JettonHeaderStyle = styled.h3`
 const JettonAddressStyle = styled.h3`
     color: var(--color-text);
     text-overflow: ellipsis;
-    /* width: 100px; */
+    width: 100%;
+    overflow: hidden;
 `;
 
 export function Jetton() {
@@ -30,7 +31,7 @@ export function Jetton() {
         <JettonStyle>
             <JettonHeaderStyle>Jetton</JettonHeaderStyle>
             <JettonAddressStyle>
-                Wallet: {Address.parse(wallet as string).toString()}
+                Wallet: {wallet ? Address.parse(wallet as string).toString() : ''}
             </JettonAddressStyle>
             <ButtonStyle disabled={!connected}>Mint</ButtonStyle>
         </JettonStyle>
