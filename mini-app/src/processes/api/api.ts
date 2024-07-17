@@ -7,4 +7,4 @@ export const queryClient = new QueryClient({
         },
     },
 });
-export const manifestURL = 'https://pashaby94.github.io/manifest_file/pahas_manifest.json';
+export const manifestURL = '';
