@@ -1,3 +1,4 @@
+import { useJetonContract } from '@/hooks/useJetonContract';
 import { useTonConnect } from '@/hooks/useTonConnect';
 import { ButtonStyle } from '@/shared/styles/components/ButtonStyle';
 import styled from 'styled-components';
@@ -25,8 +26,10 @@ const JettonAddressStyle = styled.h3`
 
 export function Jetton() {
     const { wallet, connected } = useTonConnect();
-    console.log(wallet?.length);
-
+    const { jetonWalletContract } = useJetonContract();
+    console.log(jetonWalletContract);
+    // console.log(wallet?.length);
+// 
     return (
         <JettonStyle>
             <JettonHeaderStyle>Jetton</JettonHeaderStyle>
