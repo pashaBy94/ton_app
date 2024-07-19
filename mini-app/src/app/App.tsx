@@ -13,7 +13,7 @@ const UserView = styled.section`
 
 function App() {
     const { network } = useTonConnect();
-    console.log(network);
+    // console.log(network);
 
     return (
         <UserView>

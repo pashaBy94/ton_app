@@ -26,16 +26,17 @@ const JettonAddressStyle = styled.h3`
 
 export function Jetton() {
     const { wallet, connected } = useTonConnect();
-    const { jetonWalletContract } = useJetonContract();
-    console.log(jetonWalletContract);
+    const { jettonWalletAddress } = useJetonContract();
+    console.log(jettonWalletAddress);
     // console.log(wallet?.length);
-// 
+    //
     return (
         <JettonStyle>
             <JettonHeaderStyle>Jetton</JettonHeaderStyle>
             <JettonAddressStyle>
                 Wallet: {wallet ? Address.parse(wallet as string).toString() : ''}
             </JettonAddressStyle>
+            <JettonAddressStyle>Jetton: {jettonWalletAddress ?? ''}</JettonAddressStyle>
             <ButtonStyle disabled={!connected}>Mint</ButtonStyle>
         </JettonStyle>
     );

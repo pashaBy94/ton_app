@@ -32,7 +32,7 @@ const HeaderLefttStyle = styled.div`
 
 export function Header() {
     const { network } = useTonConnect();
-    console.log(network);
+    // console.log(network);
     return (
         <HeaderStyle>
             <HeaderLefttStyle>
